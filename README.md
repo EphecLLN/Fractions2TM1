@@ -9,4 +9,4 @@
   - Les tests unitaires de la classe sont disponibles avec son squelette, vérifiez toujours que votre code passe le test ad-hoc avant de soumettre un pull request.  
 
 ### Build Status
-[![Build Status](https://travis-ci.org/EphecLLN/ExerciceFractions.svg?branch=master)](https://travis-ci.org/EphecLLN/ExerciceFractions.svg?branch=master)
+[![Build Status](https://travis-ci.org/EphecLLN/Fractions2TM1.svg?branch=master)](https://travis-ci.org/EphecLLN/Fractions2TM1.svg?branch=master)
