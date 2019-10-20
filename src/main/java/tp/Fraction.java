@@ -175,9 +175,10 @@ public class Fraction {
 	 * 		   0 otherwise. 
 	 */
 	public int compareTo(Fraction f) {
-		return 0;
+		if((f.numerator/f.denominator)>(this.numerator/this.denominator)) {return -1;}
+		else if((f.numerator/f.denominator)==(this.numerator/this.denominator)) {return 0;}
+		else {return 1;}
 	}
-	
 	/**
 	 * @return true if the current fraction is a unit fraction, i.e. its numerator is 1 in its reduced form
 	 */
