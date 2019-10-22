@@ -99,17 +99,24 @@ class FractionTest {
 	 */
 	@Test
 	void testSetDenominator() {
+		
+		// case 1 : SIMPLE TEST - test with initial fraction 1/2, and denominator set to 4
 		Fraction f = new Fraction(1,2);
 		f.setDenominator(4);
 		assertEquals(f.getDenominator(),4);
-		f = new Fraction(2,3);
-		f.setDenominator(4);
-		assertEquals(f.getDenominator(),2);
-		//Test the case of the null denominator
-		//Method fails silently, i.e. no change to the fraction
 		
+		// case 2 : SIMPLE TEST - test with initial fraction 2/3, and denominator set to 9
+		f = new Fraction(2,3);
+		f.setDenominator(9); 
+		assertEquals(f.getDenominator(),9);
+
+		// case 3 : TEST ZERO CONDITION - test with initial fraction 8/11, the denominator should not change when we set it to 0
+		//Test the case of the null denominator
+		f = new Fraction(8,11);
 		f.setDenominator(0);
-		assertEquals(f.getDenominator(),2);
+		//Method fails silently, i.e. no change to the fraction
+		assertEquals(f.getDenominator(),11);
+
 		
 	}
 
