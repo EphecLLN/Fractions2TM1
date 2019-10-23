@@ -28,6 +28,8 @@ public class Fraction {
 	 */
 	public Fraction(int numerator, int denominator) {
 		super();
+		this.numerator = numerator;
+		this.denominator = denominator;
 	}
 	
 	/**
@@ -135,14 +137,18 @@ public class Fraction {
 	public Fraction raiseToPower(Fraction power) {
 		return null;
 	}
-	
 	/**
+	 * Florent JANSSENS 
 	 * @return true if the current fraction is equals to zero
 	 */
 	public boolean isZero() {
-		return false;
+		if( numerator == 0) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-	
 	/**
 	 * @return true if the current fraction represents an integer value
 	 */
