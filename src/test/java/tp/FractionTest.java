@@ -139,18 +139,29 @@ class FractionTest {
 	@Test
 	void testAsMixedNumber() {
 		Fraction f = new Fraction(2,4);
-		assertEquals(f.asMixedNumber(), "1/2");
+		assertEquals("1/2", f.asMixedNumber());
 		f = new Fraction(0,4);
-		assertEquals(f.toString(), "0");
+		assertEquals("0", f.asMixedNumber());
 		f = new Fraction(4,4);
-		assertEquals(f.toString(), "1");
+		assertEquals("1", f.asMixedNumber());
 		f = new Fraction(-1,4);
-		assertEquals(f.toString(), "-1/4");
+		assertEquals("-1/4", f.asMixedNumber());
 		f = new Fraction(1,-4);
-		assertEquals(f.toString(), "-1/4");
+		assertEquals("-1/4", f.asMixedNumber());
 		f = new Fraction(4,3);
-		assertEquals(f.toString(), "1 + 1/3");
-		
+		assertEquals("1 + 1/3", f.asMixedNumber());
+		f = new Fraction(41,9);
+		assertEquals("4 + 5/9", f.asMixedNumber());
+		f = new Fraction(41,-9);
+		assertEquals("-4 - 5/9", f.asMixedNumber());
+		f = new Fraction(41,9);
+		assertEquals("4 + 5/9", f.asMixedNumber());
+		f = new Fraction(-41,9);
+		assertEquals("-4 - 5/9", f.asMixedNumber());
+		f = new Fraction(25,35);
+		assertEquals("5/7", f.asMixedNumber());
+		f = new Fraction(6,15);
+		assertEquals("2/5", f.asMixedNumber());
 	}
 
 	/**
