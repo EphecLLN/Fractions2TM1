@@ -73,7 +73,18 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
+		int gcm;
+		String reducedForm = "";
 		
+		// Greatest common denominator
+		if(getDenominator() > 1) {
+			gcm = getNumerator() % getDenominator();
+			reducedForm = (getNumerator()/gcm) + "/" + (getDenominator()/gcm);
+		}
+		if(getDenominator() == 1) {
+			gcm = 1;
+			reducedForm = String.valueOf(getNumerator());
+		}
 	}
 	/**
 	 * Get a textual representation of the fraction
