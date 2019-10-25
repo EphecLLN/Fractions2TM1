@@ -74,16 +74,18 @@ public class Fraction {
 	 */
 	private void reduce() {
 		int gcm;
-		String reducedForm = "";
 		
 		// Greatest common denominator
-		if(getDenominator() > 1) {
+		if(getDenominator() > 1 || getDenominator() < 0) {
 			gcm = getNumerator() % getDenominator();
-			reducedForm = (getNumerator()/gcm) + "/" + (getDenominator()/gcm);
+			setNumerator(getNumerator()/gcm);
+			setDenominator(getDenominator()/gcm);
 		}
-		if(getDenominator() == 1) {
-			gcm = 1;
-			reducedForm = String.valueOf(getNumerator());
+		else if(getDenominator() == 1) {
+			//Nothing to do, already the reduced form
+		}
+		else if(getDenominator() == 0) {
+			//Throws an error
 		}
 	}
 	/**
