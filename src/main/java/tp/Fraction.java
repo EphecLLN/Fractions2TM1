@@ -74,7 +74,11 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		
+		if(getDenominator() != 0) {
+			int gcm = getNumerator() % getDenominator(); // Greatest common denominator
+			setNumerator(getNumerator()/gcm);
+			setDenominator(getDenominator()/gcm);
+		}
 	}
 	/**
 	 * Get a textual representation of the fraction
