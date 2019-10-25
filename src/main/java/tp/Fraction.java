@@ -137,7 +137,7 @@ public class Fraction {
 		return null;
 	}
 	/**
-	 * Florent JANSSENS 
+	 * Florent JANSSENS 2tm1
 	 * @return true if the current fraction is equals to zero
 	 */
 	public boolean isZero() {
