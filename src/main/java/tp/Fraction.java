@@ -147,12 +147,7 @@ public class Fraction {
 	 * @return true if the current fraction represents an integer value
 	 */
 	public boolean isInteger() {
-		if(((numerator/denominator)%1)!=0){
-			return false;
-		}
-		else {
-			return true ;
-		}
+		return false;
 	}
 	
 	/**
