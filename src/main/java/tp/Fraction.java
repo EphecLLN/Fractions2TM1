@@ -73,19 +73,10 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		int gcm;
-		
-		// Greatest common denominator
-		if(getDenominator() > 1 || getDenominator() < 0) {
-			gcm = getNumerator() % getDenominator();
+		if(getDenominator() != 0) {
+			int gcm = getNumerator() % getDenominator(); // Greatest common denominator
 			setNumerator(getNumerator()/gcm);
 			setDenominator(getDenominator()/gcm);
-		}
-		else if(getDenominator() == 1) {
-			//Nothing to do, already the reduced form
-		}
-		else if(getDenominator() == 0) {
-			//Throws an error
 		}
 	}
 	/**
