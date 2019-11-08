@@ -73,7 +73,16 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		
+		int denSimplifie = denominator;
+		int numSimplifie = numerator;
+		for(int d = 2; d <= numerator && d <= denominator; d++) {
+			if((numerator % d) == 0 && (denominator % d) == 0) {
+				numSimplifie = numerator / d;
+				denSimplifie = denominator / d;
+			}
+		}
+		numerator = numSimplifie;
+		denominator = denSimplifie;
 	}
 	/**
 	 * Get a textual representation of the fraction
@@ -92,7 +101,6 @@ public class Fraction {
 	 * @return a textual representation of the fraction as a mixed number. 
 	 */
 	public String asMixedNumber() {
-		return "";
 	}
 	
 	/**
