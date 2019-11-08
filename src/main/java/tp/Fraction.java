@@ -73,7 +73,16 @@ public class Fraction {
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		
+		int denSimplifie = denominator;
+		int numSimplifie = numerator;
+		for(int d = 2; d <= numerator && d <= denominator; d++) {
+			if((numerator % d) == 0 && (denominator % d) == 0) {
+				numSimplifie = numerator / d;
+				denSimplifie = denominator / d;
+			}
+		}
+		numerator = numSimplifie;
+		denominator = denSimplifie;
 	}
 	/**
 	 * Get a textual representation of the fraction
@@ -92,74 +101,6 @@ public class Fraction {
 	 * @return a textual representation of the fraction as a mixed number. 
 	 */
 	public String asMixedNumber() {
-		String result = "";
-		if(denominator == 0) {
-			result = "error";
-		}
-		else {
-			int entier = 0;
-			int reste = numerator % denominator;
-			if (reste == 0 && numerator != 0) {
-				entier = numerator / denominator;
-				result = Integer.toString(entier);
-			}
-			else if (reste == 0 && numerator == 0) {
-				result = "0";
-			}
-			else {
-				entier = numerator / denominator;
-				if(entier == 0) {
-					if ((denominator % numerator) == 0) {
-						if (denominator < 0 && numerator < 0) {
-							result = "1/" + ((denominator/numerator) * -1);
-						}
-						else if (denominator < 0 && numerator > 0) {
-							result = "-1/" + ((denominator/numerator) * -1);
-						}
-						else if (denominator > 0 && numerator < 0) {
-							result = "-1/" + ((denominator/numerator) * -1);
-						}
-						else {
-							result = "1/" + (denominator/numerator);
-						}
-					}
-					else {
-						int denSimplifie = 0;
-						int numSimplifie = 0;
-						for(int d = 2; d < numerator && d < denominator; d++) {
-							if((numerator % d) == 0 && (denominator % d) == 0) {
-								numSimplifie = numerator / d;
-								denSimplifie = denominator / d;
-							}
-						}
-						if(denominator <0 && numerator < 0) {
-							result = (numSimplifie * -1) + "/" + (denSimplifie * -1);
-						}
-						else if (denominator < 0  && numerator > 0) {
-							result = (numSimplifie * -1) + "/" + (denSimplifie * -1);
-						}
-						else {
-							result = numSimplifie + "/" + denSimplifie;
-						}
-					}
-					 
-				}
-				else {
-					int premierTerme = numerator / denominator;
-					int secondTerme = numerator - (premierTerme * denominator);
-					if (denominator < 0 && numerator > 0) {
-						result = Integer.toString(premierTerme) + " - " + Integer.toString(secondTerme) + "/" + (denominator * -1);
-					}
-					else if (denominator > 0 && numerator < 0) {
-						result = Integer.toString(premierTerme) + " - " + Integer.toString((secondTerme * -1)) + "/" + (denominator);
-					}
-					else {
-						result = Integer.toString(premierTerme) + " + " + Integer.toString(secondTerme) + "/" + denominator;
-					}
-				}
-			}
-		}
-		return result;
 	}
 	
 	/**
