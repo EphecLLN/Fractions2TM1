@@ -70,11 +70,32 @@ public class Fraction {
 		
 	}
 	/**
+	 * find the GCD of two integer if a >= b
+	 * @return the GCD
+	 */
+	private int gcd(int a, int b) {
+		int r = a % b;
+		if (r == 0) {
+			return b;
+		}
+		else return gcd(b, r);
+	}
+	/**
 	 * Convert the fraction to its reduced form.  In case of a negative fraction, 
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		
+		int n = numerator;
+		int d = denominator;
+		int gcd;
+		if(n >= d) {
+			gcd = this.gcd(n, d);
+		}
+		else {
+			gcd = this.gcd(d, n);
+		}
+		numerator = n / gcd;
+		denominator = d / gcd;
 	}
 	/**
 	 * Get a textual representation of the fraction
@@ -93,7 +114,6 @@ public class Fraction {
 	 * @return a textual representation of the fraction as a mixed number. 
 	 */
 	public String asMixedNumber() {
-		return "";
 	}
 	
 	/**
