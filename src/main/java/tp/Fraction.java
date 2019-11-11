@@ -69,6 +69,7 @@ public class Fraction {
 		
 	}
 	/**
+	 * find the GCD of two integer if a >= b
 	 * @return the GCD
 	 */
 	private int gcd(int a, int b) {
@@ -86,7 +87,7 @@ public class Fraction {
 		int n = numerator;
 		int d = denominator;
 		int gcd;
-		if(n > d) {
+		if(n >= d) {
 			gcd = this.gcd(n, d);
 		}
 		else {
