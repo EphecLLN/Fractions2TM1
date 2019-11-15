@@ -70,20 +70,32 @@ public class Fraction {
 		
 	}
 	/**
+	 * find the GCD of two integer if a >= b
+	 * @return the GCD
+	 */
+	private int gcd(int a, int b) {
+		int r = a % b;
+		if (r == 0) {
+			return b;
+		}
+		else return gcd(b, r);
+	}
+	/**
 	 * Convert the fraction to its reduced form.  In case of a negative fraction, 
 	 * the numerator must be positive and the denominator must be negative. 
 	 */
 	private void reduce() {
-		int denSimplifie = denominator;
-		int numSimplifie = numerator;
-		for(int d = 2; d <= numerator && d <= denominator; d++) {
-			if((numerator % d) == 0 && (denominator % d) == 0) {
-				numSimplifie = numerator / d;
-				denSimplifie = denominator / d;
-			}
+		int n = numerator;
+		int d = denominator;
+		int gcd;
+		if(n >= d) {
+			gcd = this.gcd(n, d);
 		}
-		numerator = numSimplifie;
-		denominator = denSimplifie;
+		else {
+			gcd = this.gcd(d, n);
+		}
+		numerator = n / gcd;
+		denominator = d / gcd;
 	}
 	/**
 	 * Get a textual representation of the fraction
