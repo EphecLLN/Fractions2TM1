@@ -16,4 +16,4 @@ jobs:
     - name: Test with Maven
       run: mvn -B test --file pom.xml
     - name: Collect test results 
-      run: echo /home/runner/work/Fractions2TM1/Fractions2TM1/target/surefire-reports 
+      run: cat /home/runner/work/Fractions2TM1/Fractions2TM1/target/surefire-reports 
