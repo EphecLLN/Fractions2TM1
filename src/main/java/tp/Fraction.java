@@ -114,6 +114,7 @@ public class Fraction {
 	 * @return a textual representation of the fraction as a mixed number. 
 	 */
 	public String asMixedNumber() {
+		return "";
 	}
 	
 	/**
